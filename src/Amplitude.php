@@ -497,10 +497,10 @@ class Amplitude
         }
         $postFields = [
             'api_key' => $this->apiKey,
-            'events' => json_encode($this->event),
+            'events' => [$this->event],
         ];
 	curl_setopt($ch, \CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-        curl_setopt($ch, \CURLOPT_POSTFIELDS, $postFields);
+        curl_setopt($ch, \CURLOPT_POSTFIELDS, json_encode($postFields));
         // Always return instead of outputting response!
         curl_setopt($ch, \CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($ch);
