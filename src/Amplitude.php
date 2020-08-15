@@ -503,6 +503,9 @@ class Amplitude
         curl_setopt($ch, \CURLOPT_POSTFIELDS, json_encode($postFields));
         // Always return instead of outputting response!
         curl_setopt($ch, \CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, \CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, \CURLOPT_TIMEOUT, 5);
+
         $response = curl_exec($ch);
         $curlErrno = curl_errno($ch);
         if ($curlErrno) {
