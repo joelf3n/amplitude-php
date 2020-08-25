@@ -39,7 +39,7 @@ class AmplitudeTest extends TestCase
     public function testLogQueuedEvents()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['logEvent'])
+                          ->setMethods(['logEvent'])
             ->getMock()
         ;
 
@@ -64,7 +64,7 @@ class AmplitudeTest extends TestCase
     public function testLogQueuedEventsEmptyQueue()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['logEvent'])
+            ->setMethods(['logEvent'])
             ->getMock()
         ;
 
@@ -109,7 +109,7 @@ class AmplitudeTest extends TestCase
         $secondEventType = 'Second Event';
 
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['sendEvent'])
+            ->setMethods(['sendEvent'])
             ->getMock()
         ;
         $event     = $amplitude->event();
@@ -167,7 +167,7 @@ class AmplitudeTest extends TestCase
         $eventType = 'Event Type';
 
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['sendEvent'])
+            ->setMethods(['sendEvent'])
             ->getMock()
         ;
         $event                 = $amplitude->event();
@@ -189,7 +189,7 @@ class AmplitudeTest extends TestCase
     public function testLogEventNoApiKey()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['sendEvent'])
+            ->setMethods(['sendEvent'])
             ->getMock()
         ;
 
@@ -204,7 +204,7 @@ class AmplitudeTest extends TestCase
     public function testLogEventNoEventType()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['sendEvent'])
+            ->setMethods(['sendEvent'])
             ->getMock()
         ;
 
@@ -220,7 +220,7 @@ class AmplitudeTest extends TestCase
     public function testLogEventEventInitializedEarly()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['sendEvent'])
+            ->setMethods(['sendEvent'])
             ->getMock()
         ;
 
@@ -241,7 +241,7 @@ class AmplitudeTest extends TestCase
     public function testLogEventNoUserNoDevice()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['sendEvent'])
+            ->setMethods(['sendEvent'])
             ->getMock()
         ;
 
@@ -257,7 +257,7 @@ class AmplitudeTest extends TestCase
     public function testQueueEvent()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['logEvent'])
+            ->setMethods(['logEvent'])
             ->getMock()
         ;
 
@@ -288,7 +288,7 @@ class AmplitudeTest extends TestCase
     public function testQueueEventAlreadyInitRunImmediately()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['logEvent'])
+            ->setMethods(['logEvent'])
             ->getMock()
         ;
         $amplitude->expects($this->once())
@@ -308,7 +308,7 @@ class AmplitudeTest extends TestCase
     public function testQueueEventInitEarly()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['logEvent'])
+            ->setMethods(['logEvent'])
             ->getMock()
         ;
         $amplitude->expects($this->never())
@@ -329,7 +329,7 @@ class AmplitudeTest extends TestCase
     public function testQueueEventNoEventType()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['logEvent'])
+            ->setMethods(['logEvent'])
             ->getMock()
         ;
         $amplitude->expects($this->never())
@@ -361,7 +361,7 @@ class AmplitudeTest extends TestCase
     public function testOptOut()
     {
         $amplitude = $this->getMockBuilder(Amplitude::class)
-            ->onlyMethods(['sendEvent'])
+            ->setMethods(['sendEvent'])
             ->getMock()
         ;
 
