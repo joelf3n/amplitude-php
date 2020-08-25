@@ -499,11 +499,11 @@ class Amplitude
             'api_key' => $this->apiKey,
             'events' => [$this->event],
         ];
-	curl_setopt($ch, \CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($ch, \CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         curl_setopt($ch, \CURLOPT_POSTFIELDS, json_encode($postFields));
         // Always return instead of outputting response!
         curl_setopt($ch, \CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, \CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, \CURLOPT_CONNECTTIMEOUT, 5);
         curl_setopt($ch, \CURLOPT_TIMEOUT, 5);
 
         $response = curl_exec($ch);
