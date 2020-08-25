@@ -1,7 +1,7 @@
 # Zumba amplitude-php
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/zumba/amplitude-php/master.svg?style=flat-square)](https://travis-ci.org/zumba/amplitude-php)
+[![Build Status](https://img.shields.io/travis/joelf3n/amplitude-php/master.svg?style=flat-square)](https://travis-ci.org/joelf3n/amplitude-php)
 [![Code Coverage](https://img.shields.io/coveralls/zumba/amplitude-php/master.svg)](https://coveralls.io/github/zumba/amplitude-php)
 [![Scrutinizer](https://scrutinizer-ci.com/g/zumba/amplitude-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zumba/amplitude-php/)
 
